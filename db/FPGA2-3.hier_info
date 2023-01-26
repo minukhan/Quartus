@@ -1,0 +1,147 @@
+|FPGA2-3
+piz <= inst33.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst1.CLK
+clk => inst2.CLK
+clk => inst.CLK
+CLK1000000 => inst20.IN1
+CLK1000000 => inst23.IN1
+CLK1000000 => inst22.IN1
+CLK1000000 => inst21.IN1
+
+
+|FPGA2-3|5Xdec:inst27
+y <= inst.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+clk => inst1.CLK
+clk => inst2.CLK
+
+
+|FPGA2-3|4Xdec:inst43
+A <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+
+
+|FPGA2-3|4Xdec:inst44
+A <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+
+
+|FPGA2-3|4Xdec:inst42
+A <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+
+
+|FPGA2-3|3Xdec:inst46
+y3 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst1.CLK
+clk => inst.CLK
+
+
+|FPGA2-3|3Xdec:inst45
+y3 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst1.CLK
+clk => inst.CLK
+
+
+|FPGA2-3|5Xdec:inst9
+y <= inst.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+clk => inst1.CLK
+clk => inst2.CLK
+
+
+|FPGA2-3|4Xdec:inst13
+A <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+
+
+|FPGA2-3|4Xdec:inst12
+A <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+
+
+|FPGA2-3|4Xdec:inst11
+A <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+
+
+|FPGA2-3|4Xdec:inst10
+A <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+
+
+|FPGA2-3|3Xdec:inst41
+y3 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst1.CLK
+clk => inst.CLK
+
+
+|FPGA2-3|4Xdec:inst40
+A <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+
+
+|FPGA2-3|4Xdec:inst39
+A <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+
+
+|FPGA2-3|5Xdec:inst53
+y <= inst.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+clk => inst1.CLK
+clk => inst2.CLK
+
+
+|FPGA2-3|5Xdec:inst54
+y <= inst.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+clk => inst1.CLK
+clk => inst2.CLK
+
+
+|FPGA2-3|5Xdec:inst55
+y <= inst.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+clk => inst1.CLK
+clk => inst2.CLK
+
+
+|FPGA2-3|5Xdec:inst47
+y <= inst.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+clk => inst1.CLK
+clk => inst2.CLK
+
+
+|FPGA2-3|5Xdec:inst56
+y <= inst.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+clk => inst1.CLK
+clk => inst2.CLK
+
+
+|FPGA2-3|5Xdec:inst57
+y <= inst.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+clk => inst1.CLK
+clk => inst2.CLK
+
+
+|FPGA2-3|3Xdec:inst50
+y3 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst1.CLK
+clk => inst.CLK
+
+
+|FPGA2-3|3Xdec:inst51
+y3 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst1.CLK
+clk => inst.CLK
+
+
+|FPGA2-3|2Xdec:inst52
+y2 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+
+

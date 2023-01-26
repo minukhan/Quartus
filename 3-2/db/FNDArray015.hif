@@ -1,0 +1,121 @@
+Quartus II
+Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+11
+936
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+old_4count
+# storage
+db|FNDArray015.(1).cnf
+db|FNDArray015.(1).cnf
+# case_insensitive
+# source_file
+old_4count.bdf
+218231a7b7a8a74b368ecf6fcfcbcb2
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# macro_sequence
+
+# end
+# entity
+decoder1
+# storage
+db|FNDArray015.(3).cnf
+db|FNDArray015.(3).cnf
+# case_insensitive
+# source_file
+decoder1.bdf
+65524e20f2f589ff50d74325c9d43be7
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+decoder1:inst
+}
+# macro_sequence
+
+# end
+# entity
+decoder10
+# storage
+db|FNDArray015.(4).cnf
+db|FNDArray015.(4).cnf
+# case_insensitive
+# source_file
+decoder10.bdf
+485affa7fdb5f6be86317986f282f06f
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+decoder10:inst1
+}
+# macro_sequence
+
+# end
+# entity
+bcdto7seg
+# storage
+db|FNDArray015.(2).cnf
+db|FNDArray015.(2).cnf
+# case_insensitive
+# source_file
+bcdto7seg.bdf
+c3f34e7a5db9fa93c5d0bb9c7dfc95ab
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+bcdto7seg:inst7
+bcdto7seg:inst6
+}
+# macro_sequence
+
+# end
+# entity
+FNDArray015
+# storage
+db|FNDArray015.(0).cnf
+db|FNDArray015.(0).cnf
+# case_insensitive
+# source_file
+fndarray015.bdf
+51c9195c5a4551d705dab31bb4f054
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# complete
+

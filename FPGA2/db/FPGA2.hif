@@ -1,0 +1,231 @@
+Quartus II
+Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+11
+936
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+15Xdec
+# storage
+db|FPGA2.(1).cnf
+db|FPGA2.(1).cnf
+# case_insensitive
+# source_file
+15xdec.bdf
+a851c95832e229c5f2cf18b0e5ab1c8
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+15Xdec:inst22
+}
+# macro_sequence
+
+# end
+# entity
+25Xdec
+# storage
+db|FPGA2.(2).cnf
+db|FPGA2.(2).cnf
+# case_insensitive
+# source_file
+25xdec.bdf
+48f5d4dd2b76424bd2ca69e4ff56017
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+25xdec:inst34
+25xdec:inst36
+25xdec:inst35
+25xdec:inst37
+25xdec:inst39
+25xdec:inst38
+25xdec:inst40
+}
+# macro_sequence
+
+# end
+# entity
+2Xdec
+# storage
+db|FPGA2.(3).cnf
+db|FPGA2.(3).cnf
+# case_insensitive
+# source_file
+2xdec.bdf
+c388bfde3e9c204e823e22b565661430
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+2Xdec:inst26
+2Xdec:inst27
+}
+# macro_sequence
+
+# end
+# entity
+7Xdec
+# storage
+db|FPGA2.(4).cnf
+db|FPGA2.(4).cnf
+# case_insensitive
+# source_file
+7xdec.bdf
+76722ad227c3bdb8e2ab0954bb49088
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+7xdec:inst25
+7xdec:inst31
+}
+# macro_sequence
+
+# end
+# entity
+4Xdec
+# storage
+db|FPGA2.(5).cnf
+db|FPGA2.(5).cnf
+# case_insensitive
+# source_file
+4xdec.bdf
+82b054b6025a2ea2ee1c383abeac352
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+4xdec:inst24
+}
+# macro_sequence
+
+# end
+# entity
+3Xdec
+# storage
+db|FPGA2.(6).cnf
+db|FPGA2.(6).cnf
+# case_insensitive
+# source_file
+3xdec.bdf
+f9e226829b6cabdcc8a425d18298d64
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+3Xdec:inst23
+}
+# macro_sequence
+
+# end
+# entity
+5Xdec
+# storage
+db|FPGA2.(8).cnf
+db|FPGA2.(8).cnf
+# case_insensitive
+# source_file
+5xdec.bdf
+2ae9fdc69eb4effde51ed25182c1c1
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+5xdec:inst28
+}
+# macro_sequence
+
+# end
+# entity
+8Xdec
+# storage
+db|FPGA2.(9).cnf
+db|FPGA2.(9).cnf
+# case_insensitive
+# source_file
+8xdec.bdf
+783fb05bbcf17fe32cf98cfcf53c63f
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+8xdec:inst30
+}
+# macro_sequence
+
+# end
+# entity
+11Xdec
+# storage
+db|FPGA2.(7).cnf
+db|FPGA2.(7).cnf
+# case_insensitive
+# source_file
+11xdec.bdf
+8b5fda2aabb594f3a6a0f4a1b86f8f1
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+11xdec:inst32
+}
+# macro_sequence
+
+# end
+# entity
+FPGA2
+# storage
+db|FPGA2.(0).cnf
+db|FPGA2.(0).cnf
+# case_insensitive
+# source_file
+fpga2.bdf
+d6c0dfdc22afad944183eda179e8dd84
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# complete
+

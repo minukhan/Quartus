@@ -1,0 +1,128 @@
+|FPGA2
+K <= inst.DB_MAX_OUTPUT_PORT_TYPE
+q => inst55.IN0
+CLK => inst55.IN1
+CLK => inst57.IN1
+CLK => inst56.IN1
+CLK => inst58.IN1
+CLK => inst60.IN1
+CLK => inst59.IN1
+CLK => inst61.IN1
+e => inst57.IN0
+w => inst56.IN0
+r => inst58.IN0
+u => inst60.IN0
+t => inst59.IN0
+i => inst61.IN0
+
+
+|FPGA2|15Xdec:inst22
+y15 <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst1.CLK
+clk => inst.CLK
+
+
+|FPGA2|25Xdec:inst34
+y25 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+clk => inst1.CLK
+clk => inst2.CLK
+
+
+|FPGA2|4Xdec:inst24
+A <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+
+
+|FPGA2|3Xdec:inst23
+y3 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst1.CLK
+clk => inst.CLK
+
+
+|FPGA2|25Xdec:inst36
+y25 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+clk => inst1.CLK
+clk => inst2.CLK
+
+
+|FPGA2|2Xdec:inst26
+y2 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+
+
+|FPGA2|7Xdec:inst25
+y <= inst15.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+clk => inst1.CLK
+clk => inst2.CLK
+
+
+|FPGA2|25Xdec:inst35
+y25 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+clk => inst1.CLK
+clk => inst2.CLK
+
+
+|FPGA2|11Xdec:inst32
+y <= inst13.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst17.CLK
+clk => inst1.CLK
+clk => inst2.CLK
+clk => inst3.CLK
+
+
+|FPGA2|25Xdec:inst37
+y25 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+clk => inst1.CLK
+clk => inst2.CLK
+
+
+|FPGA2|8Xdec:inst30
+y8 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+
+
+|FPGA2|25Xdec:inst39
+y25 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+clk => inst1.CLK
+clk => inst2.CLK
+
+
+|FPGA2|5Xdec:inst28
+y <= inst.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+clk => inst1.CLK
+clk => inst2.CLK
+
+
+|FPGA2|2Xdec:inst27
+y2 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+
+
+|FPGA2|25Xdec:inst38
+y25 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+clk => inst1.CLK
+clk => inst2.CLK
+
+
+|FPGA2|7Xdec:inst31
+y <= inst15.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+clk => inst1.CLK
+clk => inst2.CLK
+
+
+|FPGA2|25Xdec:inst40
+y25 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+clk => inst1.CLK
+clk => inst2.CLK
+
+

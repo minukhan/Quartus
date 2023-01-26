@@ -1,0 +1,176 @@
+Quartus II
+Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+11
+936
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+15Xdec
+# storage
+db|FPGA2-3.(1).cnf
+db|FPGA2-3.(1).cnf
+# case_insensitive
+# source_file
+15xdec.bdf
+a851c95832e229c5f2cf18b0e5ab1c8
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# macro_sequence
+
+# end
+# entity
+4Xdec
+# storage
+db|FPGA2-3.(2).cnf
+db|FPGA2-3.(2).cnf
+# case_insensitive
+# source_file
+4xdec.bdf
+82b054b6025a2ea2ee1c383abeac352
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+4xdec:inst43
+4xdec:inst44
+4xdec:inst42
+4xdec:inst13
+4xdec:inst12
+4xdec:inst11
+4xdec:inst10
+4xdec:inst40
+4xdec:inst39
+}
+# macro_sequence
+
+# end
+# entity
+2Xdec
+# storage
+db|FPGA2-3.(3).cnf
+db|FPGA2-3.(3).cnf
+# case_insensitive
+# source_file
+2xdec.bdf
+4bef1c77fa47103d3baa262ed16d489
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+2xdec:inst52
+}
+# macro_sequence
+
+# end
+# entity
+3Xdec
+# storage
+db|FPGA2-3.(4).cnf
+db|FPGA2-3.(4).cnf
+# case_insensitive
+# source_file
+3xdec.bdf
+f9e226829b6cabdcc8a425d18298d64
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+3xdec:inst46
+3xdec:inst45
+3xdec:inst41
+3xdec:inst50
+3xdec:inst51
+}
+# macro_sequence
+
+# end
+# entity
+75Xdec
+# storage
+db|FPGA2-3.(5).cnf
+db|FPGA2-3.(5).cnf
+# case_insensitive
+# source_file
+75xdec.bdf
+9139268041dda7a26bead0f42de83228
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# macro_sequence
+
+# end
+# entity
+5Xdec
+# storage
+db|FPGA2-3.(6).cnf
+db|FPGA2-3.(6).cnf
+# case_insensitive
+# source_file
+5xdec.bdf
+2ae9fdc69eb4effde51ed25182c1c1
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+5xdec:inst27
+5xdec:inst9
+5xdec:inst53
+5xdec:inst54
+5xdec:inst55
+5xdec:inst47
+5xdec:inst56
+5xdec:inst57
+}
+# macro_sequence
+
+# end
+# entity
+FPGA2-3
+# storage
+db|FPGA2-3.(0).cnf
+db|FPGA2-3.(0).cnf
+# case_insensitive
+# source_file
+fpga2-3.bdf
+a3ca62fadf28334d071ec7bdd592ea
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# complete
+

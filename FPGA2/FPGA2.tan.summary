@@ -1,0 +1,146 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 22.682 ns
+From           : 15Xdec:inst22|inst7
+To             : K
+From Clock     : q
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Clock Setup: 'CLK'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 196.35 MHz ( period = 5.093 ns )
+From           : 25xdec:inst34|inst6
+To             : 25xdec:inst34|inst4
+From Clock     : CLK
+To Clock       : CLK
+Failed Paths   : 0
+
+Type           : Clock Setup: 'q'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 196.35 MHz ( period = 5.093 ns )
+From           : 25xdec:inst34|inst6
+To             : 25xdec:inst34|inst4
+From Clock     : q
+To Clock       : q
+Failed Paths   : 0
+
+Type           : Clock Setup: 't'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 206.06 MHz ( period = 4.853 ns )
+From           : 25xdec:inst38|inst6
+To             : 25xdec:inst38|inst4
+From Clock     : t
+To Clock       : t
+Failed Paths   : 0
+
+Type           : Clock Setup: 'u'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 351.62 MHz ( period = 2.844 ns )
+From           : 25xdec:inst39|inst6
+To             : 25xdec:inst39|inst4
+From Clock     : u
+To Clock       : u
+Failed Paths   : 0
+
+Type           : Clock Setup: 'e'
+Slack          : N/A
+Required Time  : None
+Actual Time    : Restricted to 360.10 MHz ( period = 2.777 ns )
+From           : 25xdec:inst36|inst6
+To             : 25xdec:inst36|inst4
+From Clock     : e
+To Clock       : e
+Failed Paths   : 0
+
+Type           : Clock Setup: 'r'
+Slack          : N/A
+Required Time  : None
+Actual Time    : Restricted to 360.10 MHz ( period = 2.777 ns )
+From           : 25xdec:inst37|inst6
+To             : 25xdec:inst37|inst4
+From Clock     : r
+To Clock       : r
+Failed Paths   : 0
+
+Type           : Clock Hold: 'q'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : 25xdec:inst34|inst4
+To             : 25xdec:inst34|inst6
+From Clock     : q
+To Clock       : q
+Failed Paths   : 1
+
+Type           : Clock Hold: 'CLK'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : 25xdec:inst34|inst4
+To             : 25xdec:inst34|inst6
+From Clock     : CLK
+To Clock       : CLK
+Failed Paths   : 5
+
+Type           : Clock Hold: 't'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : 25xdec:inst38|inst4
+To             : 25xdec:inst38|inst6
+From Clock     : t
+To Clock       : t
+Failed Paths   : 1
+
+Type           : Clock Hold: 'u'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : 25xdec:inst39|inst4
+To             : 25xdec:inst39|inst6
+From Clock     : u
+To Clock       : u
+Failed Paths   : 1
+
+Type           : Clock Hold: 'r'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : 25xdec:inst37|inst4
+To             : 25xdec:inst37|inst6
+From Clock     : r
+To Clock       : r
+Failed Paths   : 1
+
+Type           : Clock Hold: 'e'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : 25xdec:inst36|inst4
+To             : 25xdec:inst36|inst6
+From Clock     : e
+To Clock       : e
+Failed Paths   : 1
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 10
+
+--------------------------------------------------------------------------------------
+

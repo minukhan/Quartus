@@ -1,0 +1,120 @@
+|FNDArray015
+FNDa <= inst17.DB_MAX_OUTPUT_PORT_TYPE
+A => decoder1:inst.A
+A => inst11.IN0
+A => inst10.IN1
+A => decoder10:inst1.A
+B => decoder1:inst.B
+B => decoder10:inst1.B
+C => decoder1:inst.C
+C => decoder10:inst1.C
+D => decoder1:inst.D
+D => decoder10:inst1.D
+clk => inst13.IN0
+clk => inst12.IN1
+FNDb <= inst18.DB_MAX_OUTPUT_PORT_TYPE
+FNDc <= inst19.DB_MAX_OUTPUT_PORT_TYPE
+FNDd <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+FNDe <= inst21.DB_MAX_OUTPUT_PORT_TYPE
+FNDf <= inst22.DB_MAX_OUTPUT_PORT_TYPE
+FNDg <= inst23.DB_MAX_OUTPUT_PORT_TYPE
+com3 <= inst12.DB_MAX_OUTPUT_PORT_TYPE
+com4 <= inst12.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FNDArray015|bcdto7seg:inst7
+b1 <= inst15.DB_MAX_OUTPUT_PORT_TYPE
+C => inst30.IN0
+C => inst27.IN0
+C => inst.IN3
+C => inst34.IN1
+C => inst35.IN0
+C => inst38.IN0
+C => inst28.IN0
+C => inst1.IN1
+D => inst31.IN0
+D => inst27.IN1
+D => inst24.IN1
+D => inst21.IN1
+D => inst36.IN2
+B => inst29.IN0
+B => inst24.IN0
+B => inst21.IN0
+B => inst36.IN0
+B => inst39.IN0
+B => inst40.IN0
+B => inst1.IN0
+En => inst2.IN0
+a1 <= inst14.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst13.IN0
+A => inst22.IN0
+c1 <= inst16.DB_MAX_OUTPUT_PORT_TYPE
+d1 <= inst17.DB_MAX_OUTPUT_PORT_TYPE
+e1 <= inst18.DB_MAX_OUTPUT_PORT_TYPE
+f1 <= inst19.DB_MAX_OUTPUT_PORT_TYPE
+g1 <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FNDArray015|decoder1:inst
+W <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst13.IN0
+A => inst7.IN0
+B => inst14.IN0
+B => inst9.IN0
+B => inst8.IN1
+B => inst7.IN2
+C => inst15.IN0
+C => inst9.IN1
+C => inst10.IN1
+X <= inst11.DB_MAX_OUTPUT_PORT_TYPE
+Y <= inst12.DB_MAX_OUTPUT_PORT_TYPE
+Z <= D.DB_MAX_OUTPUT_PORT_TYPE
+D => Z.DATAIN
+
+
+|FNDArray015|bcdto7seg:inst6
+b1 <= inst15.DB_MAX_OUTPUT_PORT_TYPE
+C => inst30.IN0
+C => inst27.IN0
+C => inst.IN3
+C => inst34.IN1
+C => inst35.IN0
+C => inst38.IN0
+C => inst28.IN0
+C => inst1.IN1
+D => inst31.IN0
+D => inst27.IN1
+D => inst24.IN1
+D => inst21.IN1
+D => inst36.IN2
+B => inst29.IN0
+B => inst24.IN0
+B => inst21.IN0
+B => inst36.IN0
+B => inst39.IN0
+B => inst40.IN0
+B => inst1.IN0
+En => inst2.IN0
+a1 <= inst14.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst13.IN0
+A => inst22.IN0
+c1 <= inst16.DB_MAX_OUTPUT_PORT_TYPE
+d1 <= inst17.DB_MAX_OUTPUT_PORT_TYPE
+e1 <= inst18.DB_MAX_OUTPUT_PORT_TYPE
+f1 <= inst19.DB_MAX_OUTPUT_PORT_TYPE
+g1 <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FNDArray015|decoder10:inst1
+Z <= inst8.DB_MAX_OUTPUT_PORT_TYPE
+D => inst7.IN0
+D => inst6.IN0
+A => inst4.IN0
+A => inst.IN0
+C => inst4.IN1
+B => inst.IN1
+
+

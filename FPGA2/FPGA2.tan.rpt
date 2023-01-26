@@ -1,0 +1,817 @@
+Classic Timing Analyzer report for FPGA2
+Mon Nov 21 23:27:17 2022
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'q'
+  7. Clock Setup: 'CLK'
+  8. Clock Setup: 'r'
+  9. Clock Setup: 'e'
+ 10. Clock Setup: 'u'
+ 11. Clock Setup: 't'
+ 12. Clock Hold: 'q'
+ 13. Clock Hold: 'CLK'
+ 14. Clock Hold: 'r'
+ 15. Clock Hold: 'e'
+ 16. Clock Hold: 'u'
+ 17. Clock Hold: 't'
+ 18. tco
+ 19. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                                     ;
++------------------------------+------------------------------------------+---------------+------------------------------------------------+---------------------+---------------------+------------+----------+--------------+
+; Type                         ; Slack                                    ; Required Time ; Actual Time                                    ; From                ; To                  ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+------------------------------------------+---------------+------------------------------------------------+---------------------+---------------------+------------+----------+--------------+
+; Worst-case tco               ; N/A                                      ; None          ; 22.682 ns                                      ; 15Xdec:inst22|inst7 ; K                   ; q          ; --       ; 0            ;
+; Clock Setup: 'CLK'           ; N/A                                      ; None          ; 196.35 MHz ( period = 5.093 ns )               ; 25xdec:inst34|inst6 ; 25xdec:inst34|inst4 ; CLK        ; CLK      ; 0            ;
+; Clock Setup: 'q'             ; N/A                                      ; None          ; 196.35 MHz ( period = 5.093 ns )               ; 25xdec:inst34|inst6 ; 25xdec:inst34|inst4 ; q          ; q        ; 0            ;
+; Clock Setup: 't'             ; N/A                                      ; None          ; 206.06 MHz ( period = 4.853 ns )               ; 25xdec:inst38|inst6 ; 25xdec:inst38|inst4 ; t          ; t        ; 0            ;
+; Clock Setup: 'u'             ; N/A                                      ; None          ; 351.62 MHz ( period = 2.844 ns )               ; 25xdec:inst39|inst6 ; 25xdec:inst39|inst4 ; u          ; u        ; 0            ;
+; Clock Setup: 'e'             ; N/A                                      ; None          ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst36|inst6 ; 25xdec:inst36|inst4 ; e          ; e        ; 0            ;
+; Clock Setup: 'r'             ; N/A                                      ; None          ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst37|inst6 ; 25xdec:inst37|inst4 ; r          ; r        ; 0            ;
+; Clock Hold: 'q'              ; Not operational: Clock Skew > Data Delay ; None          ; N/A                                            ; 25xdec:inst34|inst4 ; 25xdec:inst34|inst6 ; q          ; q        ; 1            ;
+; Clock Hold: 'CLK'            ; Not operational: Clock Skew > Data Delay ; None          ; N/A                                            ; 25xdec:inst34|inst4 ; 25xdec:inst34|inst6 ; CLK        ; CLK      ; 5            ;
+; Clock Hold: 't'              ; Not operational: Clock Skew > Data Delay ; None          ; N/A                                            ; 25xdec:inst38|inst4 ; 25xdec:inst38|inst6 ; t          ; t        ; 1            ;
+; Clock Hold: 'u'              ; Not operational: Clock Skew > Data Delay ; None          ; N/A                                            ; 25xdec:inst39|inst4 ; 25xdec:inst39|inst6 ; u          ; u        ; 1            ;
+; Clock Hold: 'r'              ; Not operational: Clock Skew > Data Delay ; None          ; N/A                                            ; 25xdec:inst37|inst4 ; 25xdec:inst37|inst6 ; r          ; r        ; 1            ;
+; Clock Hold: 'e'              ; Not operational: Clock Skew > Data Delay ; None          ; N/A                                            ; 25xdec:inst36|inst4 ; 25xdec:inst36|inst6 ; e          ; e        ; 1            ;
+; Total number of failed paths ;                                          ;               ;                                                ;                     ;                     ;            ;          ; 10           ;
++------------------------------+------------------------------------------+---------------+------------------------------------------------+---------------------+---------------------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EP2C8Q208C8        ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                                                    ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                                                    ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; On                 ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; q               ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; CLK             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; r               ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; e               ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; u               ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; t               ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'q'                                                                                                                                                                                               ;
++-------+------------------------------------------------+---------------------+---------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From                ; To                  ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+---------------------+---------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; 196.35 MHz ( period = 5.093 ns )               ; 25xdec:inst34|inst6 ; 25xdec:inst34|inst4 ; q          ; q        ; None                        ; None                      ; 1.215 ns                ;
+; N/A   ; 203.50 MHz ( period = 4.914 ns )               ; 25xdec:inst34|inst5 ; 25xdec:inst34|inst4 ; q          ; q        ; None                        ; None                      ; 1.036 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 15Xdec:inst22|inst6 ; 15Xdec:inst22|inst7 ; q          ; q        ; None                        ; None                      ; 1.217 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst34|inst1 ; 25xdec:inst34|inst  ; q          ; q        ; None                        ; None                      ; 0.905 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst34|inst  ; 25xdec:inst34|inst2 ; q          ; q        ; None                        ; None                      ; 0.753 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 15Xdec:inst22|inst1 ; 15Xdec:inst22|inst  ; q          ; q        ; None                        ; None                      ; 0.749 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst34|inst2 ; 25xdec:inst34|inst  ; q          ; q        ; None                        ; None                      ; 0.748 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst34|inst2 ; 25xdec:inst34|inst1 ; q          ; q        ; None                        ; None                      ; 0.748 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 15Xdec:inst22|inst6 ; 15Xdec:inst22|inst4 ; q          ; q        ; None                        ; None                      ; 0.745 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 15Xdec:inst22|inst7 ; 15Xdec:inst22|inst6 ; q          ; q        ; None                        ; None                      ; 0.743 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst34|inst6 ; 25xdec:inst34|inst5 ; q          ; q        ; None                        ; None                      ; 0.743 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 15Xdec:inst22|inst4 ; 15Xdec:inst22|inst7 ; q          ; q        ; None                        ; None                      ; 0.739 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 15Xdec:inst22|inst  ; 15Xdec:inst22|inst1 ; q          ; q        ; None                        ; None                      ; 0.737 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 15Xdec:inst22|inst1 ; 15Xdec:inst22|inst1 ; q          ; q        ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 15Xdec:inst22|inst6 ; 15Xdec:inst22|inst6 ; q          ; q        ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 15Xdec:inst22|inst4 ; 15Xdec:inst22|inst4 ; q          ; q        ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst34|inst6 ; 25xdec:inst34|inst6 ; q          ; q        ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst34|inst5 ; 25xdec:inst34|inst5 ; q          ; q        ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst34|inst1 ; 25xdec:inst34|inst1 ; q          ; q        ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst34|inst2 ; 25xdec:inst34|inst2 ; q          ; q        ; None                        ; None                      ; 0.501 ns                ;
++-------+------------------------------------------------+---------------------+---------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'CLK'                                                                                                                                                                                               ;
++-------+------------------------------------------------+----------------------+----------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From                 ; To                   ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+----------------------+----------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; 196.35 MHz ( period = 5.093 ns )               ; 25xdec:inst34|inst6  ; 25xdec:inst34|inst4  ; CLK        ; CLK      ; None                        ; None                      ; 1.215 ns                ;
+; N/A   ; 203.50 MHz ( period = 4.914 ns )               ; 25xdec:inst34|inst5  ; 25xdec:inst34|inst4  ; CLK        ; CLK      ; None                        ; None                      ; 1.036 ns                ;
+; N/A   ; 206.06 MHz ( period = 4.853 ns )               ; 25xdec:inst38|inst6  ; 25xdec:inst38|inst4  ; CLK        ; CLK      ; None                        ; None                      ; 1.134 ns                ;
+; N/A   ; 213.90 MHz ( period = 4.675 ns )               ; 25xdec:inst38|inst5  ; 25xdec:inst38|inst4  ; CLK        ; CLK      ; None                        ; None                      ; 0.956 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst39|inst6  ; 25xdec:inst39|inst4  ; CLK        ; CLK      ; None                        ; None                      ; 0.921 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst39|inst5  ; 25xdec:inst39|inst4  ; CLK        ; CLK      ; None                        ; None                      ; 0.735 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst37|inst6  ; 25xdec:inst37|inst4  ; CLK        ; CLK      ; None                        ; None                      ; 0.920 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst36|inst6  ; 25xdec:inst36|inst4  ; CLK        ; CLK      ; None                        ; None                      ; 0.918 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst37|inst5  ; 25xdec:inst37|inst4  ; CLK        ; CLK      ; None                        ; None                      ; 0.739 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst36|inst5  ; 25xdec:inst36|inst4  ; CLK        ; CLK      ; None                        ; None                      ; 0.741 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 11xdec:inst32|inst3  ; 11xdec:inst32|inst1  ; CLK        ; CLK      ; None                        ; None                      ; 1.232 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 11xdec:inst32|inst3  ; 11xdec:inst32|inst17 ; CLK        ; CLK      ; None                        ; None                      ; 1.231 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 11xdec:inst32|inst3  ; 11xdec:inst32|inst2  ; CLK        ; CLK      ; None                        ; None                      ; 1.229 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst39|inst6  ; 25xdec:inst39|inst5  ; CLK        ; CLK      ; None                        ; None                      ; 1.223 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 15Xdec:inst22|inst6  ; 15Xdec:inst22|inst7  ; CLK        ; CLK      ; None                        ; None                      ; 1.217 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 5xdec:inst28|inst2   ; 5xdec:inst28|inst    ; CLK        ; CLK      ; None                        ; None                      ; 1.217 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 11xdec:inst32|inst17 ; 11xdec:inst32|inst3  ; CLK        ; CLK      ; None                        ; None                      ; 1.180 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 11xdec:inst32|inst1  ; 11xdec:inst32|inst17 ; CLK        ; CLK      ; None                        ; None                      ; 1.173 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst36|inst6  ; 25xdec:inst36|inst5  ; CLK        ; CLK      ; None                        ; None                      ; 1.172 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 11xdec:inst32|inst1  ; 11xdec:inst32|inst2  ; CLK        ; CLK      ; None                        ; None                      ; 1.170 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst37|inst6  ; 25xdec:inst37|inst5  ; CLK        ; CLK      ; None                        ; None                      ; 1.169 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst39|inst2  ; 25xdec:inst39|inst1  ; CLK        ; CLK      ; None                        ; None                      ; 1.051 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst37|inst2  ; 25xdec:inst37|inst1  ; CLK        ; CLK      ; None                        ; None                      ; 1.048 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst38|inst2  ; 25xdec:inst38|inst1  ; CLK        ; CLK      ; None                        ; None                      ; 1.047 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst36|inst   ; 25xdec:inst36|inst2  ; CLK        ; CLK      ; None                        ; None                      ; 1.042 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst38|inst6  ; 25xdec:inst38|inst5  ; CLK        ; CLK      ; None                        ; None                      ; 0.972 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst38|inst2  ; 25xdec:inst38|inst   ; CLK        ; CLK      ; None                        ; None                      ; 0.917 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst37|inst2  ; 25xdec:inst37|inst   ; CLK        ; CLK      ; None                        ; None                      ; 0.915 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst39|inst2  ; 25xdec:inst39|inst   ; CLK        ; CLK      ; None                        ; None                      ; 0.915 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst36|inst1  ; 25xdec:inst36|inst   ; CLK        ; CLK      ; None                        ; None                      ; 0.910 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst34|inst1  ; 25xdec:inst34|inst   ; CLK        ; CLK      ; None                        ; None                      ; 0.905 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 11xdec:inst32|inst2  ; 11xdec:inst32|inst17 ; CLK        ; CLK      ; None                        ; None                      ; 0.774 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 11xdec:inst32|inst2  ; 11xdec:inst32|inst3  ; CLK        ; CLK      ; None                        ; None                      ; 0.772 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 11xdec:inst32|inst2  ; 11xdec:inst32|inst1  ; CLK        ; CLK      ; None                        ; None                      ; 0.769 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst38|inst   ; 25xdec:inst38|inst2  ; CLK        ; CLK      ; None                        ; None                      ; 0.759 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 11xdec:inst32|inst17 ; 11xdec:inst32|inst2  ; CLK        ; CLK      ; None                        ; None                      ; 0.758 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst34|inst   ; 25xdec:inst34|inst2  ; CLK        ; CLK      ; None                        ; None                      ; 0.753 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 3Xdec:inst23|inst1   ; 3Xdec:inst23|inst    ; CLK        ; CLK      ; None                        ; None                      ; 0.752 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 15Xdec:inst22|inst1  ; 15Xdec:inst22|inst   ; CLK        ; CLK      ; None                        ; None                      ; 0.749 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst34|inst2  ; 25xdec:inst34|inst   ; CLK        ; CLK      ; None                        ; None                      ; 0.748 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst34|inst2  ; 25xdec:inst34|inst1  ; CLK        ; CLK      ; None                        ; None                      ; 0.748 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst36|inst2  ; 25xdec:inst36|inst   ; CLK        ; CLK      ; None                        ; None                      ; 0.748 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst36|inst2  ; 25xdec:inst36|inst1  ; CLK        ; CLK      ; None                        ; None                      ; 0.748 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst38|inst1  ; 25xdec:inst38|inst   ; CLK        ; CLK      ; None                        ; None                      ; 0.748 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 15Xdec:inst22|inst6  ; 15Xdec:inst22|inst4  ; CLK        ; CLK      ; None                        ; None                      ; 0.745 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 5xdec:inst28|inst2   ; 5xdec:inst28|inst1   ; CLK        ; CLK      ; None                        ; None                      ; 0.745 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 15Xdec:inst22|inst7  ; 15Xdec:inst22|inst6  ; CLK        ; CLK      ; None                        ; None                      ; 0.743 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst34|inst6  ; 25xdec:inst34|inst5  ; CLK        ; CLK      ; None                        ; None                      ; 0.743 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 5xdec:inst28|inst    ; 5xdec:inst28|inst2   ; CLK        ; CLK      ; None                        ; None                      ; 0.743 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 15Xdec:inst22|inst4  ; 15Xdec:inst22|inst7  ; CLK        ; CLK      ; None                        ; None                      ; 0.739 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst37|inst   ; 25xdec:inst37|inst2  ; CLK        ; CLK      ; None                        ; None                      ; 0.739 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst39|inst   ; 25xdec:inst39|inst2  ; CLK        ; CLK      ; None                        ; None                      ; 0.739 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 5xdec:inst28|inst1   ; 5xdec:inst28|inst    ; CLK        ; CLK      ; None                        ; None                      ; 0.739 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst37|inst1  ; 25xdec:inst37|inst   ; CLK        ; CLK      ; None                        ; None                      ; 0.738 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst39|inst1  ; 25xdec:inst39|inst   ; CLK        ; CLK      ; None                        ; None                      ; 0.738 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 15Xdec:inst22|inst   ; 15Xdec:inst22|inst1  ; CLK        ; CLK      ; None                        ; None                      ; 0.737 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 3Xdec:inst23|inst    ; 3Xdec:inst23|inst1   ; CLK        ; CLK      ; None                        ; None                      ; 0.737 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 15Xdec:inst22|inst1  ; 15Xdec:inst22|inst1  ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 15Xdec:inst22|inst6  ; 15Xdec:inst22|inst6  ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 15Xdec:inst22|inst4  ; 15Xdec:inst22|inst4  ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst34|inst6  ; 25xdec:inst34|inst6  ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst34|inst5  ; 25xdec:inst34|inst5  ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst34|inst1  ; 25xdec:inst34|inst1  ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst34|inst2  ; 25xdec:inst34|inst2  ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 11xdec:inst32|inst17 ; 11xdec:inst32|inst17 ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 11xdec:inst32|inst3  ; 11xdec:inst32|inst3  ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 11xdec:inst32|inst1  ; 11xdec:inst32|inst1  ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 11xdec:inst32|inst2  ; 11xdec:inst32|inst2  ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst37|inst6  ; 25xdec:inst37|inst6  ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst37|inst5  ; 25xdec:inst37|inst5  ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst37|inst2  ; 25xdec:inst37|inst2  ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst37|inst1  ; 25xdec:inst37|inst1  ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 4xdec:inst24|inst4   ; 4xdec:inst24|inst4   ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 4xdec:inst24|inst    ; 4xdec:inst24|inst    ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 3Xdec:inst23|inst1   ; 3Xdec:inst23|inst1   ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst36|inst6  ; 25xdec:inst36|inst6  ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst36|inst5  ; 25xdec:inst36|inst5  ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst36|inst1  ; 25xdec:inst36|inst1  ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst36|inst2  ; 25xdec:inst36|inst2  ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 8xdec:inst30|inst2   ; 8xdec:inst30|inst2   ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 8xdec:inst30|inst4   ; 8xdec:inst30|inst4   ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 8xdec:inst30|inst    ; 8xdec:inst30|inst    ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst39|inst6  ; 25xdec:inst39|inst6  ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst39|inst5  ; 25xdec:inst39|inst5  ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst39|inst2  ; 25xdec:inst39|inst2  ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst39|inst1  ; 25xdec:inst39|inst1  ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 2Xdec:inst27|inst    ; 2Xdec:inst27|inst    ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 5xdec:inst28|inst2   ; 5xdec:inst28|inst2   ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 5xdec:inst28|inst1   ; 5xdec:inst28|inst1   ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst38|inst6  ; 25xdec:inst38|inst6  ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst38|inst5  ; 25xdec:inst38|inst5  ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst38|inst2  ; 25xdec:inst38|inst2  ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst38|inst1  ; 25xdec:inst38|inst1  ; CLK        ; CLK      ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst36|inst4  ; 25xdec:inst36|inst6  ; CLK        ; CLK      ; None                        ; None                      ; 0.743 ns                ;
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; 25xdec:inst37|inst4  ; 25xdec:inst37|inst6  ; CLK        ; CLK      ; None                        ; None                      ; 0.745 ns                ;
++-------+------------------------------------------------+----------------------+----------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'r'                                                                                                                                                                                                 ;
++-------+------------------------------------------------+----------------------+----------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From                 ; To                   ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+----------------------+----------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst37|inst6  ; 25xdec:inst37|inst4  ; r          ; r        ; None                        ; None                      ; 0.920 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst37|inst5  ; 25xdec:inst37|inst4  ; r          ; r        ; None                        ; None                      ; 0.739 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 11xdec:inst32|inst3  ; 11xdec:inst32|inst1  ; r          ; r        ; None                        ; None                      ; 1.232 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 11xdec:inst32|inst3  ; 11xdec:inst32|inst17 ; r          ; r        ; None                        ; None                      ; 1.231 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 11xdec:inst32|inst3  ; 11xdec:inst32|inst2  ; r          ; r        ; None                        ; None                      ; 1.229 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 11xdec:inst32|inst17 ; 11xdec:inst32|inst3  ; r          ; r        ; None                        ; None                      ; 1.180 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 11xdec:inst32|inst1  ; 11xdec:inst32|inst17 ; r          ; r        ; None                        ; None                      ; 1.173 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 11xdec:inst32|inst1  ; 11xdec:inst32|inst2  ; r          ; r        ; None                        ; None                      ; 1.170 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst37|inst6  ; 25xdec:inst37|inst5  ; r          ; r        ; None                        ; None                      ; 1.169 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst37|inst2  ; 25xdec:inst37|inst1  ; r          ; r        ; None                        ; None                      ; 1.048 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst37|inst2  ; 25xdec:inst37|inst   ; r          ; r        ; None                        ; None                      ; 0.915 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 11xdec:inst32|inst2  ; 11xdec:inst32|inst17 ; r          ; r        ; None                        ; None                      ; 0.774 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 11xdec:inst32|inst2  ; 11xdec:inst32|inst3  ; r          ; r        ; None                        ; None                      ; 0.772 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 11xdec:inst32|inst2  ; 11xdec:inst32|inst1  ; r          ; r        ; None                        ; None                      ; 0.769 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 11xdec:inst32|inst17 ; 11xdec:inst32|inst2  ; r          ; r        ; None                        ; None                      ; 0.758 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst37|inst   ; 25xdec:inst37|inst2  ; r          ; r        ; None                        ; None                      ; 0.739 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst37|inst1  ; 25xdec:inst37|inst   ; r          ; r        ; None                        ; None                      ; 0.738 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 11xdec:inst32|inst17 ; 11xdec:inst32|inst17 ; r          ; r        ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 11xdec:inst32|inst3  ; 11xdec:inst32|inst3  ; r          ; r        ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 11xdec:inst32|inst1  ; 11xdec:inst32|inst1  ; r          ; r        ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 11xdec:inst32|inst2  ; 11xdec:inst32|inst2  ; r          ; r        ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst37|inst6  ; 25xdec:inst37|inst6  ; r          ; r        ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst37|inst5  ; 25xdec:inst37|inst5  ; r          ; r        ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst37|inst2  ; 25xdec:inst37|inst2  ; r          ; r        ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst37|inst1  ; 25xdec:inst37|inst1  ; r          ; r        ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst37|inst4  ; 25xdec:inst37|inst6  ; r          ; r        ; None                        ; None                      ; 0.745 ns                ;
++-------+------------------------------------------------+----------------------+----------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'e'                                                                                                                                                                                               ;
++-------+------------------------------------------------+---------------------+---------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From                ; To                  ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+---------------------+---------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst36|inst6 ; 25xdec:inst36|inst4 ; e          ; e        ; None                        ; None                      ; 0.918 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst36|inst5 ; 25xdec:inst36|inst4 ; e          ; e        ; None                        ; None                      ; 0.741 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst36|inst6 ; 25xdec:inst36|inst5 ; e          ; e        ; None                        ; None                      ; 1.172 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst36|inst  ; 25xdec:inst36|inst2 ; e          ; e        ; None                        ; None                      ; 1.042 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst36|inst1 ; 25xdec:inst36|inst  ; e          ; e        ; None                        ; None                      ; 0.910 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 3Xdec:inst23|inst1  ; 3Xdec:inst23|inst   ; e          ; e        ; None                        ; None                      ; 0.752 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst36|inst2 ; 25xdec:inst36|inst  ; e          ; e        ; None                        ; None                      ; 0.748 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst36|inst2 ; 25xdec:inst36|inst1 ; e          ; e        ; None                        ; None                      ; 0.748 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 3Xdec:inst23|inst   ; 3Xdec:inst23|inst1  ; e          ; e        ; None                        ; None                      ; 0.737 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 4xdec:inst24|inst4  ; 4xdec:inst24|inst4  ; e          ; e        ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 4xdec:inst24|inst   ; 4xdec:inst24|inst   ; e          ; e        ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 3Xdec:inst23|inst1  ; 3Xdec:inst23|inst1  ; e          ; e        ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst36|inst6 ; 25xdec:inst36|inst6 ; e          ; e        ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst36|inst5 ; 25xdec:inst36|inst5 ; e          ; e        ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst36|inst1 ; 25xdec:inst36|inst1 ; e          ; e        ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst36|inst2 ; 25xdec:inst36|inst2 ; e          ; e        ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst36|inst4 ; 25xdec:inst36|inst6 ; e          ; e        ; None                        ; None                      ; 0.743 ns                ;
++-------+------------------------------------------------+---------------------+---------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'u'                                                                                                                                                                                               ;
++-------+------------------------------------------------+---------------------+---------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From                ; To                  ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+---------------------+---------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; 351.62 MHz ( period = 2.844 ns )               ; 25xdec:inst39|inst6 ; 25xdec:inst39|inst4 ; u          ; u        ; None                        ; None                      ; 0.921 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst39|inst5 ; 25xdec:inst39|inst4 ; u          ; u        ; None                        ; None                      ; 0.735 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst39|inst6 ; 25xdec:inst39|inst5 ; u          ; u        ; None                        ; None                      ; 1.223 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst39|inst2 ; 25xdec:inst39|inst1 ; u          ; u        ; None                        ; None                      ; 1.051 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst39|inst2 ; 25xdec:inst39|inst  ; u          ; u        ; None                        ; None                      ; 0.915 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst39|inst  ; 25xdec:inst39|inst2 ; u          ; u        ; None                        ; None                      ; 0.739 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst39|inst1 ; 25xdec:inst39|inst  ; u          ; u        ; None                        ; None                      ; 0.738 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 8xdec:inst30|inst2  ; 8xdec:inst30|inst2  ; u          ; u        ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 8xdec:inst30|inst4  ; 8xdec:inst30|inst4  ; u          ; u        ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 8xdec:inst30|inst   ; 8xdec:inst30|inst   ; u          ; u        ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst39|inst6 ; 25xdec:inst39|inst6 ; u          ; u        ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst39|inst5 ; 25xdec:inst39|inst5 ; u          ; u        ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst39|inst2 ; 25xdec:inst39|inst2 ; u          ; u        ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst39|inst1 ; 25xdec:inst39|inst1 ; u          ; u        ; None                        ; None                      ; 0.501 ns                ;
++-------+------------------------------------------------+---------------------+---------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 't'                                                                                                                                                                                               ;
++-------+------------------------------------------------+---------------------+---------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From                ; To                  ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+---------------------+---------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; 206.06 MHz ( period = 4.853 ns )               ; 25xdec:inst38|inst6 ; 25xdec:inst38|inst4 ; t          ; t        ; None                        ; None                      ; 1.134 ns                ;
+; N/A   ; 213.90 MHz ( period = 4.675 ns )               ; 25xdec:inst38|inst5 ; 25xdec:inst38|inst4 ; t          ; t        ; None                        ; None                      ; 0.956 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 5xdec:inst28|inst2  ; 5xdec:inst28|inst   ; t          ; t        ; None                        ; None                      ; 1.217 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst38|inst2 ; 25xdec:inst38|inst1 ; t          ; t        ; None                        ; None                      ; 1.047 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst38|inst6 ; 25xdec:inst38|inst5 ; t          ; t        ; None                        ; None                      ; 0.972 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst38|inst2 ; 25xdec:inst38|inst  ; t          ; t        ; None                        ; None                      ; 0.917 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst38|inst  ; 25xdec:inst38|inst2 ; t          ; t        ; None                        ; None                      ; 0.759 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst38|inst1 ; 25xdec:inst38|inst  ; t          ; t        ; None                        ; None                      ; 0.748 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 5xdec:inst28|inst2  ; 5xdec:inst28|inst1  ; t          ; t        ; None                        ; None                      ; 0.745 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 5xdec:inst28|inst   ; 5xdec:inst28|inst2  ; t          ; t        ; None                        ; None                      ; 0.743 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 5xdec:inst28|inst1  ; 5xdec:inst28|inst   ; t          ; t        ; None                        ; None                      ; 0.739 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 2Xdec:inst27|inst   ; 2Xdec:inst27|inst   ; t          ; t        ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 5xdec:inst28|inst2  ; 5xdec:inst28|inst2  ; t          ; t        ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 5xdec:inst28|inst1  ; 5xdec:inst28|inst1  ; t          ; t        ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst38|inst6 ; 25xdec:inst38|inst6 ; t          ; t        ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst38|inst5 ; 25xdec:inst38|inst5 ; t          ; t        ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst38|inst2 ; 25xdec:inst38|inst2 ; t          ; t        ; None                        ; None                      ; 0.501 ns                ;
+; N/A   ; Restricted to 360.10 MHz ( period = 2.777 ns ) ; 25xdec:inst38|inst1 ; 25xdec:inst38|inst1 ; t          ; t        ; None                        ; None                      ; 0.501 ns                ;
++-------+------------------------------------------------+---------------------+---------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'q'                                                                                                                                                                                   ;
++------------------------------------------+---------------------+---------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack                            ; From                ; To                  ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++------------------------------------------+---------------------+---------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Not operational: Clock Skew > Data Delay ; 25xdec:inst34|inst4 ; 25xdec:inst34|inst6 ; q          ; q        ; None                       ; None                       ; 1.446 ns                 ;
++------------------------------------------+---------------------+---------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'CLK'                                                                                                                                                                                 ;
++------------------------------------------+---------------------+---------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack                            ; From                ; To                  ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++------------------------------------------+---------------------+---------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Not operational: Clock Skew > Data Delay ; 25xdec:inst34|inst4 ; 25xdec:inst34|inst6 ; CLK        ; CLK      ; None                       ; None                       ; 1.446 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 25xdec:inst38|inst4 ; 25xdec:inst38|inst6 ; CLK        ; CLK      ; None                       ; None                       ; 1.430 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 25xdec:inst39|inst4 ; 25xdec:inst39|inst6 ; CLK        ; CLK      ; None                       ; None                       ; 1.115 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 25xdec:inst37|inst4 ; 25xdec:inst37|inst6 ; CLK        ; CLK      ; None                       ; None                       ; 0.745 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 25xdec:inst36|inst4 ; 25xdec:inst36|inst6 ; CLK        ; CLK      ; None                       ; None                       ; 0.743 ns                 ;
++------------------------------------------+---------------------+---------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'r'                                                                                                                                                                                   ;
++------------------------------------------+---------------------+---------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack                            ; From                ; To                  ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++------------------------------------------+---------------------+---------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Not operational: Clock Skew > Data Delay ; 25xdec:inst37|inst4 ; 25xdec:inst37|inst6 ; r          ; r        ; None                       ; None                       ; 0.745 ns                 ;
++------------------------------------------+---------------------+---------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'e'                                                                                                                                                                                   ;
++------------------------------------------+---------------------+---------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack                            ; From                ; To                  ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++------------------------------------------+---------------------+---------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Not operational: Clock Skew > Data Delay ; 25xdec:inst36|inst4 ; 25xdec:inst36|inst6 ; e          ; e        ; None                       ; None                       ; 0.743 ns                 ;
++------------------------------------------+---------------------+---------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'u'                                                                                                                                                                                   ;
++------------------------------------------+---------------------+---------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack                            ; From                ; To                  ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++------------------------------------------+---------------------+---------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Not operational: Clock Skew > Data Delay ; 25xdec:inst39|inst4 ; 25xdec:inst39|inst6 ; u          ; u        ; None                       ; None                       ; 1.115 ns                 ;
++------------------------------------------+---------------------+---------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 't'                                                                                                                                                                                   ;
++------------------------------------------+---------------------+---------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack                            ; From                ; To                  ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++------------------------------------------+---------------------+---------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Not operational: Clock Skew > Data Delay ; 25xdec:inst38|inst4 ; 25xdec:inst38|inst6 ; t          ; t        ; None                       ; None                       ; 1.430 ns                 ;
++------------------------------------------+---------------------+---------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+
+
++----------------------------------------------------------------------------+
+; tco                                                                        ;
++-------+--------------+------------+----------------------+----+------------+
+; Slack ; Required tco ; Actual tco ; From                 ; To ; From Clock ;
++-------+--------------+------------+----------------------+----+------------+
+; N/A   ; None         ; 22.682 ns  ; 15Xdec:inst22|inst7  ; K  ; q          ;
+; N/A   ; None         ; 21.863 ns  ; 8xdec:inst30|inst2   ; K  ; u          ;
+; N/A   ; None         ; 21.825 ns  ; 15Xdec:inst22|inst7  ; K  ; CLK        ;
+; N/A   ; None         ; 21.118 ns  ; 5xdec:inst28|inst    ; K  ; t          ;
+; N/A   ; None         ; 20.670 ns  ; 8xdec:inst30|inst2   ; K  ; CLK        ;
+; N/A   ; None         ; 19.921 ns  ; 4xdec:inst24|inst4   ; K  ; e          ;
+; N/A   ; None         ; 19.916 ns  ; 5xdec:inst28|inst    ; K  ; CLK        ;
+; N/A   ; None         ; 18.731 ns  ; 4xdec:inst24|inst4   ; K  ; CLK        ;
+; N/A   ; None         ; 17.446 ns  ; 11xdec:inst32|inst17 ; K  ; r          ;
+; N/A   ; None         ; 17.155 ns  ; 11xdec:inst32|inst2  ; K  ; r          ;
+; N/A   ; None         ; 16.281 ns  ; 11xdec:inst32|inst17 ; K  ; CLK        ;
+; N/A   ; None         ; 15.990 ns  ; 11xdec:inst32|inst2  ; K  ; CLK        ;
++-------+--------------+------------+----------------------+----+------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Mon Nov 21 23:27:16 2022
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off FPGA2 -c FPGA2 --timing_analysis_only
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "q" is an undefined clock
+    Info: Assuming node "CLK" is an undefined clock
+    Info: Assuming node "r" is an undefined clock
+    Info: Assuming node "e" is an undefined clock
+    Info: Assuming node "u" is an undefined clock
+    Info: Assuming node "t" is an undefined clock
+Warning: Found 21 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected gated clock "inst59" as buffer
+    Info: Detected ripple clock "25xdec:inst38|inst" as buffer
+    Info: Detected ripple clock "25xdec:inst38|inst4" as buffer
+    Info: Detected ripple clock "2Xdec:inst27|inst" as buffer
+    Info: Detected gated clock "inst60" as buffer
+    Info: Detected ripple clock "25xdec:inst39|inst" as buffer
+    Info: Detected ripple clock "25xdec:inst39|inst4" as buffer
+    Info: Detected ripple clock "8xdec:inst30|inst" as buffer
+    Info: Detected ripple clock "8xdec:inst30|inst4" as buffer
+    Info: Detected gated clock "inst57" as buffer
+    Info: Detected ripple clock "25xdec:inst36|inst" as buffer
+    Info: Detected ripple clock "25xdec:inst36|inst4" as buffer
+    Info: Detected ripple clock "3Xdec:inst23|inst1" as buffer
+    Info: Detected ripple clock "4xdec:inst24|inst" as buffer
+    Info: Detected gated clock "inst58" as buffer
+    Info: Detected ripple clock "25xdec:inst37|inst" as buffer
+    Info: Detected ripple clock "25xdec:inst37|inst4" as buffer
+    Info: Detected gated clock "inst55" as buffer
+    Info: Detected ripple clock "25xdec:inst34|inst" as buffer
+    Info: Detected ripple clock "25xdec:inst34|inst4" as buffer
+    Info: Detected ripple clock "15Xdec:inst22|inst1" as buffer
+Info: Clock "q" has Internal fmax of 196.35 MHz between source register "25xdec:inst34|inst6" and destination register "25xdec:inst34|inst4" (period= 5.093 ns)
+    Info: + Longest register to register delay is 1.215 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X19_Y18_N27; Fanout = 3; REG Node = '25xdec:inst34|inst6'
+        Info: 2: + IC(0.741 ns) + CELL(0.366 ns) = 1.107 ns; Loc. = LCCOMB_X18_Y18_N18; Fanout = 1; COMB Node = '25xdec:inst34|inst8'
+        Info: 3: + IC(0.000 ns) + CELL(0.108 ns) = 1.215 ns; Loc. = LCFF_X18_Y18_N19; Fanout = 3; REG Node = '25xdec:inst34|inst4'
+        Info: Total cell delay = 0.474 ns ( 39.01 % )
+        Info: Total interconnect delay = 0.741 ns ( 60.99 % )
+    Info: - Smallest clock skew is -3.614 ns
+        Info: + Shortest clock path from clock "q" to destination register is 7.882 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.985 ns) = 0.985 ns; Loc. = PIN_110; Fanout = 1; CLK Node = 'q'
+            Info: 2: + IC(2.115 ns) + CELL(0.206 ns) = 3.306 ns; Loc. = LCCOMB_X30_Y10_N28; Fanout = 3; COMB Node = 'inst55'
+            Info: 3: + IC(2.538 ns) + CELL(0.970 ns) = 6.814 ns; Loc. = LCFF_X18_Y18_N11; Fanout = 3; REG Node = '25xdec:inst34|inst'
+            Info: 4: + IC(0.402 ns) + CELL(0.666 ns) = 7.882 ns; Loc. = LCFF_X18_Y18_N19; Fanout = 3; REG Node = '25xdec:inst34|inst4'
+            Info: Total cell delay = 2.827 ns ( 35.87 % )
+            Info: Total interconnect delay = 5.055 ns ( 64.13 % )
+        Info: - Longest clock path from clock "q" to source register is 11.496 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.985 ns) = 0.985 ns; Loc. = PIN_110; Fanout = 1; CLK Node = 'q'
+            Info: 2: + IC(2.115 ns) + CELL(0.206 ns) = 3.306 ns; Loc. = LCCOMB_X30_Y10_N28; Fanout = 3; COMB Node = 'inst55'
+            Info: 3: + IC(2.538 ns) + CELL(0.970 ns) = 6.814 ns; Loc. = LCFF_X18_Y18_N11; Fanout = 3; REG Node = '25xdec:inst34|inst'
+            Info: 4: + IC(3.108 ns) + CELL(0.000 ns) = 9.922 ns; Loc. = CLKCTRL_G2; Fanout = 2; COMB Node = '25xdec:inst34|inst~clkctrl'
+            Info: 5: + IC(0.908 ns) + CELL(0.666 ns) = 11.496 ns; Loc. = LCFF_X19_Y18_N27; Fanout = 3; REG Node = '25xdec:inst34|inst6'
+            Info: Total cell delay = 2.827 ns ( 24.59 % )
+            Info: Total interconnect delay = 8.669 ns ( 75.41 % )
+    Info: + Micro clock to output delay of source is 0.304 ns
+    Info: + Micro setup delay of destination is -0.040 ns
+Info: Clock "CLK" has Internal fmax of 196.35 MHz between source register "25xdec:inst34|inst6" and destination register "25xdec:inst34|inst4" (period= 5.093 ns)
+    Info: + Longest register to register delay is 1.215 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X19_Y18_N27; Fanout = 3; REG Node = '25xdec:inst34|inst6'
+        Info: 2: + IC(0.741 ns) + CELL(0.366 ns) = 1.107 ns; Loc. = LCCOMB_X18_Y18_N18; Fanout = 1; COMB Node = '25xdec:inst34|inst8'
+        Info: 3: + IC(0.000 ns) + CELL(0.108 ns) = 1.215 ns; Loc. = LCFF_X18_Y18_N19; Fanout = 3; REG Node = '25xdec:inst34|inst4'
+        Info: Total cell delay = 0.474 ns ( 39.01 % )
+        Info: Total interconnect delay = 0.741 ns ( 60.99 % )
+    Info: - Smallest clock skew is -3.614 ns
+        Info: + Shortest clock path from clock "CLK" to destination register is 7.025 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.150 ns) = 1.150 ns; Loc. = PIN_132; Fanout = 5; CLK Node = 'CLK'
+            Info: 2: + IC(0.933 ns) + CELL(0.366 ns) = 2.449 ns; Loc. = LCCOMB_X30_Y10_N28; Fanout = 3; COMB Node = 'inst55'
+            Info: 3: + IC(2.538 ns) + CELL(0.970 ns) = 5.957 ns; Loc. = LCFF_X18_Y18_N11; Fanout = 3; REG Node = '25xdec:inst34|inst'
+            Info: 4: + IC(0.402 ns) + CELL(0.666 ns) = 7.025 ns; Loc. = LCFF_X18_Y18_N19; Fanout = 3; REG Node = '25xdec:inst34|inst4'
+            Info: Total cell delay = 3.152 ns ( 44.87 % )
+            Info: Total interconnect delay = 3.873 ns ( 55.13 % )
+        Info: - Longest clock path from clock "CLK" to source register is 10.639 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.150 ns) = 1.150 ns; Loc. = PIN_132; Fanout = 5; CLK Node = 'CLK'
+            Info: 2: + IC(0.933 ns) + CELL(0.366 ns) = 2.449 ns; Loc. = LCCOMB_X30_Y10_N28; Fanout = 3; COMB Node = 'inst55'
+            Info: 3: + IC(2.538 ns) + CELL(0.970 ns) = 5.957 ns; Loc. = LCFF_X18_Y18_N11; Fanout = 3; REG Node = '25xdec:inst34|inst'
+            Info: 4: + IC(3.108 ns) + CELL(0.000 ns) = 9.065 ns; Loc. = CLKCTRL_G2; Fanout = 2; COMB Node = '25xdec:inst34|inst~clkctrl'
+            Info: 5: + IC(0.908 ns) + CELL(0.666 ns) = 10.639 ns; Loc. = LCFF_X19_Y18_N27; Fanout = 3; REG Node = '25xdec:inst34|inst6'
+            Info: Total cell delay = 3.152 ns ( 29.63 % )
+            Info: Total interconnect delay = 7.487 ns ( 70.37 % )
+    Info: + Micro clock to output delay of source is 0.304 ns
+    Info: + Micro setup delay of destination is -0.040 ns
+Info: Clock "r" Internal fmax is restricted to 360.1 MHz between source register "25xdec:inst37|inst6" and destination register "25xdec:inst37|inst4"
+    Info: fmax restricted to clock pin edge rate 2.777 ns. Expand message to see actual delay path.
+        Info: + Longest register to register delay is 0.920 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X33_Y10_N9; Fanout = 3; REG Node = '25xdec:inst37|inst6'
+            Info: 2: + IC(0.446 ns) + CELL(0.366 ns) = 0.812 ns; Loc. = LCCOMB_X33_Y10_N18; Fanout = 1; COMB Node = '25xdec:inst37|inst8'
+            Info: 3: + IC(0.000 ns) + CELL(0.108 ns) = 0.920 ns; Loc. = LCFF_X33_Y10_N19; Fanout = 2; REG Node = '25xdec:inst37|inst4'
+            Info: Total cell delay = 0.474 ns ( 51.52 % )
+            Info: Total interconnect delay = 0.446 ns ( 48.48 % )
+        Info: - Smallest clock skew is -0.953 ns
+            Info: + Shortest clock path from clock "r" to destination register is 6.670 ns
+                Info: 1: + IC(0.000 ns) + CELL(0.995 ns) = 0.995 ns; Loc. = PIN_114; Fanout = 1; CLK Node = 'r'
+                Info: 2: + IC(2.122 ns) + CELL(0.366 ns) = 3.483 ns; Loc. = LCCOMB_X30_Y10_N14; Fanout = 3; COMB Node = 'inst58'
+                Info: 3: + IC(0.529 ns) + CELL(0.970 ns) = 4.982 ns; Loc. = LCFF_X31_Y10_N23; Fanout = 3; REG Node = '25xdec:inst37|inst'
+                Info: 4: + IC(1.022 ns) + CELL(0.666 ns) = 6.670 ns; Loc. = LCFF_X33_Y10_N19; Fanout = 2; REG Node = '25xdec:inst37|inst4'
+                Info: Total cell delay = 2.997 ns ( 44.93 % )
+                Info: Total interconnect delay = 3.673 ns ( 55.07 % )
+            Info: - Longest clock path from clock "r" to source register is 7.623 ns
+                Info: 1: + IC(0.000 ns) + CELL(0.995 ns) = 0.995 ns; Loc. = PIN_114; Fanout = 1; CLK Node = 'r'
+                Info: 2: + IC(2.122 ns) + CELL(0.366 ns) = 3.483 ns; Loc. = LCCOMB_X30_Y10_N14; Fanout = 3; COMB Node = 'inst58'
+                Info: 3: + IC(0.529 ns) + CELL(0.970 ns) = 4.982 ns; Loc. = LCFF_X31_Y10_N23; Fanout = 3; REG Node = '25xdec:inst37|inst'
+                Info: 4: + IC(1.095 ns) + CELL(0.000 ns) = 6.077 ns; Loc. = CLKCTRL_G6; Fanout = 2; COMB Node = '25xdec:inst37|inst~clkctrl'
+                Info: 5: + IC(0.880 ns) + CELL(0.666 ns) = 7.623 ns; Loc. = LCFF_X33_Y10_N9; Fanout = 3; REG Node = '25xdec:inst37|inst6'
+                Info: Total cell delay = 2.997 ns ( 39.32 % )
+                Info: Total interconnect delay = 4.626 ns ( 60.68 % )
+        Info: + Micro clock to output delay of source is 0.304 ns
+        Info: + Micro setup delay of destination is -0.040 ns
+Info: Clock "e" Internal fmax is restricted to 360.1 MHz between source register "25xdec:inst36|inst6" and destination register "25xdec:inst36|inst4"
+    Info: fmax restricted to clock pin edge rate 2.777 ns. Expand message to see actual delay path.
+        Info: + Longest register to register delay is 0.918 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X32_Y12_N15; Fanout = 3; REG Node = '25xdec:inst36|inst6'
+            Info: 2: + IC(0.444 ns) + CELL(0.366 ns) = 0.810 ns; Loc. = LCCOMB_X32_Y12_N0; Fanout = 1; COMB Node = '25xdec:inst36|inst8'
+            Info: 3: + IC(0.000 ns) + CELL(0.108 ns) = 0.918 ns; Loc. = LCFF_X32_Y12_N1; Fanout = 3; REG Node = '25xdec:inst36|inst4'
+            Info: Total cell delay = 0.474 ns ( 51.63 % )
+            Info: Total interconnect delay = 0.444 ns ( 48.37 % )
+        Info: - Smallest clock skew is -0.888 ns
+            Info: + Shortest clock path from clock "e" to destination register is 7.196 ns
+                Info: 1: + IC(0.000 ns) + CELL(0.985 ns) = 0.985 ns; Loc. = PIN_113; Fanout = 1; CLK Node = 'e'
+                Info: 2: + IC(2.157 ns) + CELL(0.366 ns) = 3.508 ns; Loc. = LCCOMB_X30_Y10_N0; Fanout = 3; COMB Node = 'inst57'
+                Info: 3: + IC(0.952 ns) + CELL(0.970 ns) = 5.430 ns; Loc. = LCFF_X32_Y11_N17; Fanout = 3; REG Node = '25xdec:inst36|inst'
+                Info: 4: + IC(1.100 ns) + CELL(0.666 ns) = 7.196 ns; Loc. = LCFF_X32_Y12_N1; Fanout = 3; REG Node = '25xdec:inst36|inst4'
+                Info: Total cell delay = 2.987 ns ( 41.51 % )
+                Info: Total interconnect delay = 4.209 ns ( 58.49 % )
+            Info: - Longest clock path from clock "e" to source register is 8.084 ns
+                Info: 1: + IC(0.000 ns) + CELL(0.985 ns) = 0.985 ns; Loc. = PIN_113; Fanout = 1; CLK Node = 'e'
+                Info: 2: + IC(2.157 ns) + CELL(0.366 ns) = 3.508 ns; Loc. = LCCOMB_X30_Y10_N0; Fanout = 3; COMB Node = 'inst57'
+                Info: 3: + IC(0.952 ns) + CELL(0.970 ns) = 5.430 ns; Loc. = LCFF_X32_Y11_N17; Fanout = 3; REG Node = '25xdec:inst36|inst'
+                Info: 4: + IC(1.080 ns) + CELL(0.000 ns) = 6.510 ns; Loc. = CLKCTRL_G5; Fanout = 2; COMB Node = '25xdec:inst36|inst~clkctrl'
+                Info: 5: + IC(0.908 ns) + CELL(0.666 ns) = 8.084 ns; Loc. = LCFF_X32_Y12_N15; Fanout = 3; REG Node = '25xdec:inst36|inst6'
+                Info: Total cell delay = 2.987 ns ( 36.95 % )
+                Info: Total interconnect delay = 5.097 ns ( 63.05 % )
+        Info: + Micro clock to output delay of source is 0.304 ns
+        Info: + Micro setup delay of destination is -0.040 ns
+Info: Clock "u" has Internal fmax of 351.62 MHz between source register "25xdec:inst39|inst6" and destination register "25xdec:inst39|inst4" (period= 2.844 ns)
+    Info: + Longest register to register delay is 0.921 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X23_Y12_N21; Fanout = 3; REG Node = '25xdec:inst39|inst6'
+        Info: 2: + IC(0.447 ns) + CELL(0.366 ns) = 0.813 ns; Loc. = LCCOMB_X23_Y12_N16; Fanout = 1; COMB Node = '25xdec:inst39|inst8'
+        Info: 3: + IC(0.000 ns) + CELL(0.108 ns) = 0.921 ns; Loc. = LCFF_X23_Y12_N17; Fanout = 2; REG Node = '25xdec:inst39|inst4'
+        Info: Total cell delay = 0.474 ns ( 51.47 % )
+        Info: Total interconnect delay = 0.447 ns ( 48.53 % )
+    Info: - Smallest clock skew is -1.659 ns
+        Info: + Shortest clock path from clock "u" to destination register is 8.224 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.995 ns) = 0.995 ns; Loc. = PIN_116; Fanout = 1; CLK Node = 'u'
+            Info: 2: + IC(2.152 ns) + CELL(0.366 ns) = 3.513 ns; Loc. = LCCOMB_X30_Y10_N16; Fanout = 3; COMB Node = 'inst60'
+            Info: 3: + IC(1.685 ns) + CELL(0.970 ns) = 6.168 ns; Loc. = LCFF_X21_Y10_N23; Fanout = 3; REG Node = '25xdec:inst39|inst'
+            Info: 4: + IC(1.390 ns) + CELL(0.666 ns) = 8.224 ns; Loc. = LCFF_X23_Y12_N17; Fanout = 2; REG Node = '25xdec:inst39|inst4'
+            Info: Total cell delay = 2.997 ns ( 36.44 % )
+            Info: Total interconnect delay = 5.227 ns ( 63.56 % )
+        Info: - Longest clock path from clock "u" to source register is 9.883 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.995 ns) = 0.995 ns; Loc. = PIN_116; Fanout = 1; CLK Node = 'u'
+            Info: 2: + IC(2.152 ns) + CELL(0.366 ns) = 3.513 ns; Loc. = LCCOMB_X30_Y10_N16; Fanout = 3; COMB Node = 'inst60'
+            Info: 3: + IC(1.685 ns) + CELL(0.970 ns) = 6.168 ns; Loc. = LCFF_X21_Y10_N23; Fanout = 3; REG Node = '25xdec:inst39|inst'
+            Info: 4: + IC(2.153 ns) + CELL(0.000 ns) = 8.321 ns; Loc. = CLKCTRL_G4; Fanout = 2; COMB Node = '25xdec:inst39|inst~clkctrl'
+            Info: 5: + IC(0.896 ns) + CELL(0.666 ns) = 9.883 ns; Loc. = LCFF_X23_Y12_N21; Fanout = 3; REG Node = '25xdec:inst39|inst6'
+            Info: Total cell delay = 2.997 ns ( 30.32 % )
+            Info: Total interconnect delay = 6.886 ns ( 69.68 % )
+    Info: + Micro clock to output delay of source is 0.304 ns
+    Info: + Micro setup delay of destination is -0.040 ns
+Info: Clock "t" has Internal fmax of 206.06 MHz between source register "25xdec:inst38|inst6" and destination register "25xdec:inst38|inst4" (period= 4.853 ns)
+    Info: + Longest register to register delay is 1.134 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X25_Y17_N15; Fanout = 3; REG Node = '25xdec:inst38|inst6'
+        Info: 2: + IC(0.660 ns) + CELL(0.366 ns) = 1.026 ns; Loc. = LCCOMB_X24_Y17_N30; Fanout = 1; COMB Node = '25xdec:inst38|inst8'
+        Info: 3: + IC(0.000 ns) + CELL(0.108 ns) = 1.134 ns; Loc. = LCFF_X24_Y17_N31; Fanout = 2; REG Node = '25xdec:inst38|inst4'
+        Info: Total cell delay = 0.474 ns ( 41.80 % )
+        Info: Total interconnect delay = 0.660 ns ( 58.20 % )
+    Info: - Smallest clock skew is -3.455 ns
+        Info: + Shortest clock path from clock "t" to destination register is 7.750 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.995 ns) = 0.995 ns; Loc. = PIN_115; Fanout = 1; CLK Node = 't'
+            Info: 2: + IC(2.159 ns) + CELL(0.366 ns) = 3.520 ns; Loc. = LCCOMB_X30_Y10_N12; Fanout = 3; COMB Node = 'inst59'
+            Info: 3: + IC(2.185 ns) + CELL(0.970 ns) = 6.675 ns; Loc. = LCFF_X24_Y17_N23; Fanout = 3; REG Node = '25xdec:inst38|inst'
+            Info: 4: + IC(0.409 ns) + CELL(0.666 ns) = 7.750 ns; Loc. = LCFF_X24_Y17_N31; Fanout = 2; REG Node = '25xdec:inst38|inst4'
+            Info: Total cell delay = 2.997 ns ( 38.67 % )
+            Info: Total interconnect delay = 4.753 ns ( 61.33 % )
+        Info: - Longest clock path from clock "t" to source register is 11.205 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.995 ns) = 0.995 ns; Loc. = PIN_115; Fanout = 1; CLK Node = 't'
+            Info: 2: + IC(2.159 ns) + CELL(0.366 ns) = 3.520 ns; Loc. = LCCOMB_X30_Y10_N12; Fanout = 3; COMB Node = 'inst59'
+            Info: 3: + IC(2.185 ns) + CELL(0.970 ns) = 6.675 ns; Loc. = LCFF_X24_Y17_N23; Fanout = 3; REG Node = '25xdec:inst38|inst'
+            Info: 4: + IC(2.944 ns) + CELL(0.000 ns) = 9.619 ns; Loc. = CLKCTRL_G0; Fanout = 2; COMB Node = '25xdec:inst38|inst~clkctrl'
+            Info: 5: + IC(0.920 ns) + CELL(0.666 ns) = 11.205 ns; Loc. = LCFF_X25_Y17_N15; Fanout = 3; REG Node = '25xdec:inst38|inst6'
+            Info: Total cell delay = 2.997 ns ( 26.75 % )
+            Info: Total interconnect delay = 8.208 ns ( 73.25 % )
+    Info: + Micro clock to output delay of source is 0.304 ns
+    Info: + Micro setup delay of destination is -0.040 ns
+Warning: Circuit may not operate. Detected 1 non-operational path(s) clocked by clock "q" with clock skew larger than data delay. See Compilation Report for details.
+Info: Found hold time violation between source  pin or register "25xdec:inst34|inst4" and destination pin or register "25xdec:inst34|inst6" for clock "q" (Hold time is 2.17 ns)
+    Info: + Largest clock skew is 3.614 ns
+        Info: + Longest clock path from clock "q" to destination register is 11.496 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.985 ns) = 0.985 ns; Loc. = PIN_110; Fanout = 1; CLK Node = 'q'
+            Info: 2: + IC(2.115 ns) + CELL(0.206 ns) = 3.306 ns; Loc. = LCCOMB_X30_Y10_N28; Fanout = 3; COMB Node = 'inst55'
+            Info: 3: + IC(2.538 ns) + CELL(0.970 ns) = 6.814 ns; Loc. = LCFF_X18_Y18_N11; Fanout = 3; REG Node = '25xdec:inst34|inst'
+            Info: 4: + IC(3.108 ns) + CELL(0.000 ns) = 9.922 ns; Loc. = CLKCTRL_G2; Fanout = 2; COMB Node = '25xdec:inst34|inst~clkctrl'
+            Info: 5: + IC(0.908 ns) + CELL(0.666 ns) = 11.496 ns; Loc. = LCFF_X19_Y18_N27; Fanout = 3; REG Node = '25xdec:inst34|inst6'
+            Info: Total cell delay = 2.827 ns ( 24.59 % )
+            Info: Total interconnect delay = 8.669 ns ( 75.41 % )
+        Info: - Shortest clock path from clock "q" to source register is 7.882 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.985 ns) = 0.985 ns; Loc. = PIN_110; Fanout = 1; CLK Node = 'q'
+            Info: 2: + IC(2.115 ns) + CELL(0.206 ns) = 3.306 ns; Loc. = LCCOMB_X30_Y10_N28; Fanout = 3; COMB Node = 'inst55'
+            Info: 3: + IC(2.538 ns) + CELL(0.970 ns) = 6.814 ns; Loc. = LCFF_X18_Y18_N11; Fanout = 3; REG Node = '25xdec:inst34|inst'
+            Info: 4: + IC(0.402 ns) + CELL(0.666 ns) = 7.882 ns; Loc. = LCFF_X18_Y18_N19; Fanout = 3; REG Node = '25xdec:inst34|inst4'
+            Info: Total cell delay = 2.827 ns ( 35.87 % )
+            Info: Total interconnect delay = 5.055 ns ( 64.13 % )
+    Info: - Micro clock to output delay of source is 0.304 ns
+    Info: - Shortest register to register delay is 1.446 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X18_Y18_N19; Fanout = 3; REG Node = '25xdec:inst34|inst4'
+        Info: 2: + IC(1.136 ns) + CELL(0.202 ns) = 1.338 ns; Loc. = LCCOMB_X19_Y18_N26; Fanout = 1; COMB Node = '25xdec:inst34|inst21'
+        Info: 3: + IC(0.000 ns) + CELL(0.108 ns) = 1.446 ns; Loc. = LCFF_X19_Y18_N27; Fanout = 3; REG Node = '25xdec:inst34|inst6'
+        Info: Total cell delay = 0.310 ns ( 21.44 % )
+        Info: Total interconnect delay = 1.136 ns ( 78.56 % )
+    Info: + Micro hold delay of destination is 0.306 ns
+Warning: Circuit may not operate. Detected 5 non-operational path(s) clocked by clock "CLK" with clock skew larger than data delay. See Compilation Report for details.
+Info: Found hold time violation between source  pin or register "25xdec:inst34|inst4" and destination pin or register "25xdec:inst34|inst6" for clock "CLK" (Hold time is 2.17 ns)
+    Info: + Largest clock skew is 3.614 ns
+        Info: + Longest clock path from clock "CLK" to destination register is 10.639 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.150 ns) = 1.150 ns; Loc. = PIN_132; Fanout = 5; CLK Node = 'CLK'
+            Info: 2: + IC(0.933 ns) + CELL(0.366 ns) = 2.449 ns; Loc. = LCCOMB_X30_Y10_N28; Fanout = 3; COMB Node = 'inst55'
+            Info: 3: + IC(2.538 ns) + CELL(0.970 ns) = 5.957 ns; Loc. = LCFF_X18_Y18_N11; Fanout = 3; REG Node = '25xdec:inst34|inst'
+            Info: 4: + IC(3.108 ns) + CELL(0.000 ns) = 9.065 ns; Loc. = CLKCTRL_G2; Fanout = 2; COMB Node = '25xdec:inst34|inst~clkctrl'
+            Info: 5: + IC(0.908 ns) + CELL(0.666 ns) = 10.639 ns; Loc. = LCFF_X19_Y18_N27; Fanout = 3; REG Node = '25xdec:inst34|inst6'
+            Info: Total cell delay = 3.152 ns ( 29.63 % )
+            Info: Total interconnect delay = 7.487 ns ( 70.37 % )
+        Info: - Shortest clock path from clock "CLK" to source register is 7.025 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.150 ns) = 1.150 ns; Loc. = PIN_132; Fanout = 5; CLK Node = 'CLK'
+            Info: 2: + IC(0.933 ns) + CELL(0.366 ns) = 2.449 ns; Loc. = LCCOMB_X30_Y10_N28; Fanout = 3; COMB Node = 'inst55'
+            Info: 3: + IC(2.538 ns) + CELL(0.970 ns) = 5.957 ns; Loc. = LCFF_X18_Y18_N11; Fanout = 3; REG Node = '25xdec:inst34|inst'
+            Info: 4: + IC(0.402 ns) + CELL(0.666 ns) = 7.025 ns; Loc. = LCFF_X18_Y18_N19; Fanout = 3; REG Node = '25xdec:inst34|inst4'
+            Info: Total cell delay = 3.152 ns ( 44.87 % )
+            Info: Total interconnect delay = 3.873 ns ( 55.13 % )
+    Info: - Micro clock to output delay of source is 0.304 ns
+    Info: - Shortest register to register delay is 1.446 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X18_Y18_N19; Fanout = 3; REG Node = '25xdec:inst34|inst4'
+        Info: 2: + IC(1.136 ns) + CELL(0.202 ns) = 1.338 ns; Loc. = LCCOMB_X19_Y18_N26; Fanout = 1; COMB Node = '25xdec:inst34|inst21'
+        Info: 3: + IC(0.000 ns) + CELL(0.108 ns) = 1.446 ns; Loc. = LCFF_X19_Y18_N27; Fanout = 3; REG Node = '25xdec:inst34|inst6'
+        Info: Total cell delay = 0.310 ns ( 21.44 % )
+        Info: Total interconnect delay = 1.136 ns ( 78.56 % )
+    Info: + Micro hold delay of destination is 0.306 ns
+Warning: Circuit may not operate. Detected 1 non-operational path(s) clocked by clock "r" with clock skew larger than data delay. See Compilation Report for details.
+Info: Found hold time violation between source  pin or register "25xdec:inst37|inst4" and destination pin or register "25xdec:inst37|inst6" for clock "r" (Hold time is 210 ps)
+    Info: + Largest clock skew is 0.953 ns
+        Info: + Longest clock path from clock "r" to destination register is 7.623 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.995 ns) = 0.995 ns; Loc. = PIN_114; Fanout = 1; CLK Node = 'r'
+            Info: 2: + IC(2.122 ns) + CELL(0.366 ns) = 3.483 ns; Loc. = LCCOMB_X30_Y10_N14; Fanout = 3; COMB Node = 'inst58'
+            Info: 3: + IC(0.529 ns) + CELL(0.970 ns) = 4.982 ns; Loc. = LCFF_X31_Y10_N23; Fanout = 3; REG Node = '25xdec:inst37|inst'
+            Info: 4: + IC(1.095 ns) + CELL(0.000 ns) = 6.077 ns; Loc. = CLKCTRL_G6; Fanout = 2; COMB Node = '25xdec:inst37|inst~clkctrl'
+            Info: 5: + IC(0.880 ns) + CELL(0.666 ns) = 7.623 ns; Loc. = LCFF_X33_Y10_N9; Fanout = 3; REG Node = '25xdec:inst37|inst6'
+            Info: Total cell delay = 2.997 ns ( 39.32 % )
+            Info: Total interconnect delay = 4.626 ns ( 60.68 % )
+        Info: - Shortest clock path from clock "r" to source register is 6.670 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.995 ns) = 0.995 ns; Loc. = PIN_114; Fanout = 1; CLK Node = 'r'
+            Info: 2: + IC(2.122 ns) + CELL(0.366 ns) = 3.483 ns; Loc. = LCCOMB_X30_Y10_N14; Fanout = 3; COMB Node = 'inst58'
+            Info: 3: + IC(0.529 ns) + CELL(0.970 ns) = 4.982 ns; Loc. = LCFF_X31_Y10_N23; Fanout = 3; REG Node = '25xdec:inst37|inst'
+            Info: 4: + IC(1.022 ns) + CELL(0.666 ns) = 6.670 ns; Loc. = LCFF_X33_Y10_N19; Fanout = 2; REG Node = '25xdec:inst37|inst4'
+            Info: Total cell delay = 2.997 ns ( 44.93 % )
+            Info: Total interconnect delay = 3.673 ns ( 55.07 % )
+    Info: - Micro clock to output delay of source is 0.304 ns
+    Info: - Shortest register to register delay is 0.745 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X33_Y10_N19; Fanout = 2; REG Node = '25xdec:inst37|inst4'
+        Info: 2: + IC(0.435 ns) + CELL(0.202 ns) = 0.637 ns; Loc. = LCCOMB_X33_Y10_N8; Fanout = 1; COMB Node = '25xdec:inst37|inst21'
+        Info: 3: + IC(0.000 ns) + CELL(0.108 ns) = 0.745 ns; Loc. = LCFF_X33_Y10_N9; Fanout = 3; REG Node = '25xdec:inst37|inst6'
+        Info: Total cell delay = 0.310 ns ( 41.61 % )
+        Info: Total interconnect delay = 0.435 ns ( 58.39 % )
+    Info: + Micro hold delay of destination is 0.306 ns
+Warning: Circuit may not operate. Detected 1 non-operational path(s) clocked by clock "e" with clock skew larger than data delay. See Compilation Report for details.
+Info: Found hold time violation between source  pin or register "25xdec:inst36|inst4" and destination pin or register "25xdec:inst36|inst6" for clock "e" (Hold time is 147 ps)
+    Info: + Largest clock skew is 0.888 ns
+        Info: + Longest clock path from clock "e" to destination register is 8.084 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.985 ns) = 0.985 ns; Loc. = PIN_113; Fanout = 1; CLK Node = 'e'
+            Info: 2: + IC(2.157 ns) + CELL(0.366 ns) = 3.508 ns; Loc. = LCCOMB_X30_Y10_N0; Fanout = 3; COMB Node = 'inst57'
+            Info: 3: + IC(0.952 ns) + CELL(0.970 ns) = 5.430 ns; Loc. = LCFF_X32_Y11_N17; Fanout = 3; REG Node = '25xdec:inst36|inst'
+            Info: 4: + IC(1.080 ns) + CELL(0.000 ns) = 6.510 ns; Loc. = CLKCTRL_G5; Fanout = 2; COMB Node = '25xdec:inst36|inst~clkctrl'
+            Info: 5: + IC(0.908 ns) + CELL(0.666 ns) = 8.084 ns; Loc. = LCFF_X32_Y12_N15; Fanout = 3; REG Node = '25xdec:inst36|inst6'
+            Info: Total cell delay = 2.987 ns ( 36.95 % )
+            Info: Total interconnect delay = 5.097 ns ( 63.05 % )
+        Info: - Shortest clock path from clock "e" to source register is 7.196 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.985 ns) = 0.985 ns; Loc. = PIN_113; Fanout = 1; CLK Node = 'e'
+            Info: 2: + IC(2.157 ns) + CELL(0.366 ns) = 3.508 ns; Loc. = LCCOMB_X30_Y10_N0; Fanout = 3; COMB Node = 'inst57'
+            Info: 3: + IC(0.952 ns) + CELL(0.970 ns) = 5.430 ns; Loc. = LCFF_X32_Y11_N17; Fanout = 3; REG Node = '25xdec:inst36|inst'
+            Info: 4: + IC(1.100 ns) + CELL(0.666 ns) = 7.196 ns; Loc. = LCFF_X32_Y12_N1; Fanout = 3; REG Node = '25xdec:inst36|inst4'
+            Info: Total cell delay = 2.987 ns ( 41.51 % )
+            Info: Total interconnect delay = 4.209 ns ( 58.49 % )
+    Info: - Micro clock to output delay of source is 0.304 ns
+    Info: - Shortest register to register delay is 0.743 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X32_Y12_N1; Fanout = 3; REG Node = '25xdec:inst36|inst4'
+        Info: 2: + IC(0.433 ns) + CELL(0.202 ns) = 0.635 ns; Loc. = LCCOMB_X32_Y12_N14; Fanout = 1; COMB Node = '25xdec:inst36|inst21'
+        Info: 3: + IC(0.000 ns) + CELL(0.108 ns) = 0.743 ns; Loc. = LCFF_X32_Y12_N15; Fanout = 3; REG Node = '25xdec:inst36|inst6'
+        Info: Total cell delay = 0.310 ns ( 41.72 % )
+        Info: Total interconnect delay = 0.433 ns ( 58.28 % )
+    Info: + Micro hold delay of destination is 0.306 ns
+Warning: Circuit may not operate. Detected 1 non-operational path(s) clocked by clock "u" with clock skew larger than data delay. See Compilation Report for details.
+Info: Found hold time violation between source  pin or register "25xdec:inst39|inst4" and destination pin or register "25xdec:inst39|inst6" for clock "u" (Hold time is 546 ps)
+    Info: + Largest clock skew is 1.659 ns
+        Info: + Longest clock path from clock "u" to destination register is 9.883 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.995 ns) = 0.995 ns; Loc. = PIN_116; Fanout = 1; CLK Node = 'u'
+            Info: 2: + IC(2.152 ns) + CELL(0.366 ns) = 3.513 ns; Loc. = LCCOMB_X30_Y10_N16; Fanout = 3; COMB Node = 'inst60'
+            Info: 3: + IC(1.685 ns) + CELL(0.970 ns) = 6.168 ns; Loc. = LCFF_X21_Y10_N23; Fanout = 3; REG Node = '25xdec:inst39|inst'
+            Info: 4: + IC(2.153 ns) + CELL(0.000 ns) = 8.321 ns; Loc. = CLKCTRL_G4; Fanout = 2; COMB Node = '25xdec:inst39|inst~clkctrl'
+            Info: 5: + IC(0.896 ns) + CELL(0.666 ns) = 9.883 ns; Loc. = LCFF_X23_Y12_N21; Fanout = 3; REG Node = '25xdec:inst39|inst6'
+            Info: Total cell delay = 2.997 ns ( 30.32 % )
+            Info: Total interconnect delay = 6.886 ns ( 69.68 % )
+        Info: - Shortest clock path from clock "u" to source register is 8.224 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.995 ns) = 0.995 ns; Loc. = PIN_116; Fanout = 1; CLK Node = 'u'
+            Info: 2: + IC(2.152 ns) + CELL(0.366 ns) = 3.513 ns; Loc. = LCCOMB_X30_Y10_N16; Fanout = 3; COMB Node = 'inst60'
+            Info: 3: + IC(1.685 ns) + CELL(0.970 ns) = 6.168 ns; Loc. = LCFF_X21_Y10_N23; Fanout = 3; REG Node = '25xdec:inst39|inst'
+            Info: 4: + IC(1.390 ns) + CELL(0.666 ns) = 8.224 ns; Loc. = LCFF_X23_Y12_N17; Fanout = 2; REG Node = '25xdec:inst39|inst4'
+            Info: Total cell delay = 2.997 ns ( 36.44 % )
+            Info: Total interconnect delay = 5.227 ns ( 63.56 % )
+    Info: - Micro clock to output delay of source is 0.304 ns
+    Info: - Shortest register to register delay is 1.115 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X23_Y12_N17; Fanout = 2; REG Node = '25xdec:inst39|inst4'
+        Info: 2: + IC(0.473 ns) + CELL(0.534 ns) = 1.007 ns; Loc. = LCCOMB_X23_Y12_N20; Fanout = 1; COMB Node = '25xdec:inst39|inst21'
+        Info: 3: + IC(0.000 ns) + CELL(0.108 ns) = 1.115 ns; Loc. = LCFF_X23_Y12_N21; Fanout = 3; REG Node = '25xdec:inst39|inst6'
+        Info: Total cell delay = 0.642 ns ( 57.58 % )
+        Info: Total interconnect delay = 0.473 ns ( 42.42 % )
+    Info: + Micro hold delay of destination is 0.306 ns
+Warning: Circuit may not operate. Detected 1 non-operational path(s) clocked by clock "t" with clock skew larger than data delay. See Compilation Report for details.
+Info: Found hold time violation between source  pin or register "25xdec:inst38|inst4" and destination pin or register "25xdec:inst38|inst6" for clock "t" (Hold time is 2.027 ns)
+    Info: + Largest clock skew is 3.455 ns
+        Info: + Longest clock path from clock "t" to destination register is 11.205 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.995 ns) = 0.995 ns; Loc. = PIN_115; Fanout = 1; CLK Node = 't'
+            Info: 2: + IC(2.159 ns) + CELL(0.366 ns) = 3.520 ns; Loc. = LCCOMB_X30_Y10_N12; Fanout = 3; COMB Node = 'inst59'
+            Info: 3: + IC(2.185 ns) + CELL(0.970 ns) = 6.675 ns; Loc. = LCFF_X24_Y17_N23; Fanout = 3; REG Node = '25xdec:inst38|inst'
+            Info: 4: + IC(2.944 ns) + CELL(0.000 ns) = 9.619 ns; Loc. = CLKCTRL_G0; Fanout = 2; COMB Node = '25xdec:inst38|inst~clkctrl'
+            Info: 5: + IC(0.920 ns) + CELL(0.666 ns) = 11.205 ns; Loc. = LCFF_X25_Y17_N15; Fanout = 3; REG Node = '25xdec:inst38|inst6'
+            Info: Total cell delay = 2.997 ns ( 26.75 % )
+            Info: Total interconnect delay = 8.208 ns ( 73.25 % )
+        Info: - Shortest clock path from clock "t" to source register is 7.750 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.995 ns) = 0.995 ns; Loc. = PIN_115; Fanout = 1; CLK Node = 't'
+            Info: 2: + IC(2.159 ns) + CELL(0.366 ns) = 3.520 ns; Loc. = LCCOMB_X30_Y10_N12; Fanout = 3; COMB Node = 'inst59'
+            Info: 3: + IC(2.185 ns) + CELL(0.970 ns) = 6.675 ns; Loc. = LCFF_X24_Y17_N23; Fanout = 3; REG Node = '25xdec:inst38|inst'
+            Info: 4: + IC(0.409 ns) + CELL(0.666 ns) = 7.750 ns; Loc. = LCFF_X24_Y17_N31; Fanout = 2; REG Node = '25xdec:inst38|inst4'
+            Info: Total cell delay = 2.997 ns ( 38.67 % )
+            Info: Total interconnect delay = 4.753 ns ( 61.33 % )
+    Info: - Micro clock to output delay of source is 0.304 ns
+    Info: - Shortest register to register delay is 1.430 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X24_Y17_N31; Fanout = 2; REG Node = '25xdec:inst38|inst4'
+        Info: 2: + IC(1.120 ns) + CELL(0.202 ns) = 1.322 ns; Loc. = LCCOMB_X25_Y17_N14; Fanout = 1; COMB Node = '25xdec:inst38|inst21'
+        Info: 3: + IC(0.000 ns) + CELL(0.108 ns) = 1.430 ns; Loc. = LCFF_X25_Y17_N15; Fanout = 3; REG Node = '25xdec:inst38|inst6'
+        Info: Total cell delay = 0.310 ns ( 21.68 % )
+        Info: Total interconnect delay = 1.120 ns ( 78.32 % )
+    Info: + Micro hold delay of destination is 0.306 ns
+Info: tco from clock "q" to destination pin "K" through register "15Xdec:inst22|inst7" is 22.682 ns
+    Info: + Longest clock path from clock "q" to source register is 15.251 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.985 ns) = 0.985 ns; Loc. = PIN_110; Fanout = 1; CLK Node = 'q'
+        Info: 2: + IC(2.115 ns) + CELL(0.206 ns) = 3.306 ns; Loc. = LCCOMB_X30_Y10_N28; Fanout = 3; COMB Node = 'inst55'
+        Info: 3: + IC(2.538 ns) + CELL(0.970 ns) = 6.814 ns; Loc. = LCFF_X18_Y18_N11; Fanout = 3; REG Node = '25xdec:inst34|inst'
+        Info: 4: + IC(0.402 ns) + CELL(0.970 ns) = 8.186 ns; Loc. = LCFF_X18_Y18_N19; Fanout = 3; REG Node = '25xdec:inst34|inst4'
+        Info: 5: + IC(1.919 ns) + CELL(0.970 ns) = 11.075 ns; Loc. = LCFF_X17_Y12_N19; Fanout = 3; REG Node = '15Xdec:inst22|inst1'
+        Info: 6: + IC(2.585 ns) + CELL(0.000 ns) = 13.660 ns; Loc. = CLKCTRL_G1; Fanout = 3; COMB Node = '15Xdec:inst22|inst1~clkctrl'
+        Info: 7: + IC(0.925 ns) + CELL(0.666 ns) = 15.251 ns; Loc. = LCFF_X31_Y15_N1; Fanout = 2; REG Node = '15Xdec:inst22|inst7'
+        Info: Total cell delay = 4.767 ns ( 31.26 % )
+        Info: Total interconnect delay = 10.484 ns ( 68.74 % )
+    Info: + Micro clock to output delay of source is 0.304 ns
+    Info: + Longest register to pin delay is 7.127 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X31_Y15_N1; Fanout = 2; REG Node = '15Xdec:inst22|inst7'
+        Info: 2: + IC(0.749 ns) + CELL(0.319 ns) = 1.068 ns; Loc. = LCCOMB_X32_Y15_N22; Fanout = 1; COMB Node = 'inst~0'
+        Info: 3: + IC(0.372 ns) + CELL(0.206 ns) = 1.646 ns; Loc. = LCCOMB_X32_Y15_N8; Fanout = 1; COMB Node = 'inst'
+        Info: 4: + IC(2.185 ns) + CELL(3.296 ns) = 7.127 ns; Loc. = PIN_102; Fanout = 0; PIN Node = 'K'
+        Info: Total cell delay = 3.821 ns ( 53.61 % )
+        Info: Total interconnect delay = 3.306 ns ( 46.39 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 188 megabytes
+    Info: Processing ended: Mon Nov 21 23:27:17 2022
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
+
+

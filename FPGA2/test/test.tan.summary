@@ -1,0 +1,66 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 23.735 ns
+From           : 2xdec:inst10|inst
+To             : K
+From Clock     : CLK15
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Clock Setup: 'CLK'
+Slack          : N/A
+Required Time  : None
+Actual Time    : Restricted to 340.02 MHz ( period = 2.941 ns )
+From           : 5xdec:inst9|inst1
+To             : 5xdec:inst9|inst
+From Clock     : CLK
+To Clock       : CLK
+Failed Paths   : 0
+
+Type           : Clock Setup: 'CLK15'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 352.11 MHz ( period = 2.840 ns )
+From           : 5xdec:inst9|inst1
+To             : 5xdec:inst9|inst
+From Clock     : CLK15
+To Clock       : CLK15
+Failed Paths   : 0
+
+Type           : Clock Hold: 'CLK'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : 25xdec:inst2|inst4
+To             : 25xdec:inst2|inst6
+From Clock     : CLK
+To Clock       : CLK
+Failed Paths   : 1
+
+Type           : Clock Hold: 'CLK15'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : 25xdec:inst2|inst4
+To             : 25xdec:inst2|inst6
+From Clock     : CLK15
+To Clock       : CLK15
+Failed Paths   : 1
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 2
+
+--------------------------------------------------------------------------------------
+

@@ -1,0 +1,36 @@
+|test
+K <= 2Xdec:inst10.y2
+CLK15 => inst14.IN0
+CLK => inst14.IN1
+
+
+|test|2Xdec:inst10
+y2 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+
+
+|test|5Xdec:inst9
+y <= inst.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+clk => inst1.CLK
+clk => inst2.CLK
+
+
+|test|25Xdec:inst2
+y25 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+clk => inst1.CLK
+clk => inst2.CLK
+
+
+|test|3Xdec:inst13
+y3 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst1.CLK
+clk => inst.CLK
+
+
+|test|4Xdec:inst
+A <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+clk => inst.CLK
+
+
